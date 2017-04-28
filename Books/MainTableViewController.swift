@@ -10,7 +10,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController, LoginProtocol {
     
-    var myArr:[[String:String]] = [[String:String]]()
+//    var myArr:[[String:String]] = [[String:String]]()
+    var appdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
     var userName: String?
 
     @IBAction func openLoginScene(_ sender: Any) {
@@ -39,13 +40,13 @@ class MainTableViewController: UITableViewController, LoginProtocol {
 //        myArr.append("이순신")
 //        myArr.append("강감찬")
         
-        let dict1:[String:String] = ["name":"홍길동", "phone":"010-1234-5678"]
-        let dict2:[String:String] = ["name":"이순신", "phone":"010-3422-2222"]
-        let dict3:[String:String] = ["name":"강감찬", "phone":"010-5234-3312"]
-        
-        myArr.append(dict1)
-        myArr.append(dict2)
-        myArr.append(dict3)
+//        let dict1:[String:String] = ["name":"홍길동", "phone":"010-1234-5678"]
+//        let dict2:[String:String] = ["name":"이순신", "phone":"010-3422-2222"]
+//        let dict3:[String:String] = ["name":"강감찬", "phone":"010-5234-3312"]
+//        
+//        myArr.append(dict1)
+//        myArr.append(dict2)
+//        myArr.append(dict3)
 
     }
 
@@ -63,7 +64,12 @@ class MainTableViewController: UITableViewController, LoginProtocol {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myArr.count
+//        return myArr.count
+        if let books = appdelegate?.books {
+            return books.count
+        } else {
+            return 0
+        }
     }
 
     
@@ -71,10 +77,17 @@ class MainTableViewController: UITableViewController, LoginProtocol {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        let dict = myArr[indexPath.row]
+//        let dict = myArr[indexPath.row]
+        guard let books = appdelegate?.books else {
+            return cell
+        }
         
-        cell.textLabel?.text = dict["name"]
-        cell.detailTextLabel?.text = dict["phone"]
+        cell.textLabel?.text = books[indexPath.row].title
+        cell.detailTextLabel?.text = books[indexPath.row].author
+        cell.imageView?.image = books[indexPath.row].coverImage
+        
+//        cell.textLabel?.text = dict["name"]
+//        cell.detailTextLabel?.text = dict["phone"]
         
         print("Row:\(indexPath.row)")
         
@@ -95,6 +108,8 @@ class MainTableViewController: UITableViewController, LoginProtocol {
                 })
             }
         }
+        
+        self.tableView.reloadData()
     }
 
     /*
