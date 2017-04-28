@@ -15,6 +15,7 @@
 		27F380CD1EB1AC14007AB71D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F380CC1EB1AC14007AB71D /* LoginViewController.swift */; };
 		27F380CF1EB1AE90007AB71D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F380CE1EB1AE90007AB71D /* MainTableViewController.swift */; };
 		27F380D11EB1BCDD007AB71D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F380D01EB1BCDD007AB71D /* PhotoViewController.swift */; };
+		27F380D61EB2D882007AB71D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F380D51EB2D882007AB71D /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		27F380CE1EB1AE90007AB71D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		27F380D01EB1BCDD007AB71D /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		27F380D31EB1C43D007AB71D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		27F380D51EB2D882007AB71D /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				27F380CC1EB1AC14007AB71D /* LoginViewController.swift */,
 				27F380CE1EB1AE90007AB71D /* MainTableViewController.swift */,
 				27F380D01EB1BCDD007AB71D /* PhotoViewController.swift */,
+				27F380D51EB2D882007AB71D /* Book.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				27F380CF1EB1AE90007AB71D /* MainTableViewController.swift in Sources */,
 				27F380CD1EB1AC14007AB71D /* LoginViewController.swift in Sources */,
+				27F380D61EB2D882007AB71D /* Book.swift in Sources */,
 				27F380BD1EB18B25007AB71D /* ViewController.swift in Sources */,
 				27F380BB1EB18B25007AB71D /* AppDelegate.swift in Sources */,
 				27F380D11EB1BCDD007AB71D /* PhotoViewController.swift in Sources */,
@@ -321,6 +325,7 @@
 				27F380CB1EB18B25007AB71D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

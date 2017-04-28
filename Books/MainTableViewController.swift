@@ -11,6 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController, LoginProtocol {
     
     var myArr:[[String:String]] = [[String:String]]()
+    var userName: String?
 
     @IBAction func openLoginScene(_ sender: Any) {
         
@@ -22,7 +23,7 @@ class MainTableViewController: UITableViewController, LoginProtocol {
     }
     
     func completedLogin(name: String) {
-        print(name)
+        userName = name
     }
     
     override func viewDidLoad() {
@@ -80,6 +81,21 @@ class MainTableViewController: UITableViewController, LoginProtocol {
         return cell
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let uName = userName {
+            let alert = UIAlertController(title: "로그인 성공", message: "\(uName)님 반갑습니다.", preferredStyle: UIAlertControllerStyle.alert)
+            let confirmAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+            alert.addAction(confirmAction)
+            
+//            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true) {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {
+                    (Timer) -> Void in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
